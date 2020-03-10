@@ -96,7 +96,6 @@ INDEX VERSION 1.131+C:\Users\0016623\Workspace\JournalISBAN\.metadata\.plugins\o
 3624429661.index
 965241259.index
 3227056335.index
-1866617585.index
 2279414724.index
 3084721869.index
 1850304580.index
