@@ -1,0 +1,120 @@
+package com.isb.journal.entity.relacional;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.PrimaryKeyJoinColumns;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+@Table(name="journal_operation_request")
+@Access(AccessType.FIELD)
+public class JournalOperationRequest implements Serializable {
+
+	private static final long serialVersionUID = 2719049841809439637L;
+
+	@Id
+	@JsonIgnore
+	@Column(columnDefinition = "BINARY(16)")
+	private UUID id;
+
+	@OneToMany(cascade= {CascadeType.ALL}, orphanRemoval = true)
+	@JoinColumn(name = "request_id")
+	private List<JournalOperationData> journalOperationList = new ArrayList<>();
+
+	@OneToOne
+	@JoinColumn(name = "id") 
+	private JournalEntityOracle journalEntityOracle;
+	
+	@OneToOne(cascade = {CascadeType.ALL}, mappedBy =  "journalOperationRequest")
+	private OperationAmount operationAmount = new OperationAmount();
+	
+	@OneToOne(cascade = {CascadeType.ALL}, mappedBy =  "journalOperationRequest")
+	private AccountingCostCenter accountingCostCenter = new AccountingCostCenter();
+	
+	@OneToOne(cascade = {CascadeType.ALL}, mappedBy =  "journalOperationRequest")
+	private TargetCostCenter targetCostCenter =  new TargetCostCenter();
+	
+	@OneToOne(cascade = {CascadeType.ALL}, mappedBy =  "journalOperationRequest")
+	private UserCostCenter userCostCenter = new UserCostCenter();
+
+	//private ObbSpecificData obbSpecificData;
+	
+	@Column(name="posting_type")
+	private String postingType;
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
+	}
+
+	public List<JournalOperationData> getJournalOperationList() {
+		return journalOperationList;
+	}
+
+	public void setJournalOperationList(List<JournalOperationData> journalOperationList) {
+		this.journalOperationList = journalOperationList;
+	}
+
+	public OperationAmount getOperationAmount() {
+		return operationAmount;
+	}
+
+	public void setOperationAmount(OperationAmount operationAmount) {
+		this.operationAmount = operationAmount;
+	}
+
+	public AccountingCostCenter getAccountingCostCenter() {
+		return accountingCostCenter;
+	}
+
+	public void setAccountingCostCenter(AccountingCostCenter accountingCostCenter) {
+		this.accountingCostCenter = accountingCostCenter;
+	}
+
+	public TargetCostCenter getTargetCostCenter() {
+		return targetCostCenter;
+	}
+
+	public void setTargetCostCenter(TargetCostCenter targetCostCenter) {
+		this.targetCostCenter = targetCostCenter;
+	}
+
+	public UserCostCenter getUserCostCenter() {
+		return userCostCenter;
+	}
+
+	public void setUserCostCenter(UserCostCenter userCostCenter) {
+		this.userCostCenter = userCostCenter;
+	}
+
+	public String getPostingType() {
+		return postingType;
+	}
+
+	public void setPostingType(String postingType) {
+		this.postingType = postingType;
+	}
+
+}

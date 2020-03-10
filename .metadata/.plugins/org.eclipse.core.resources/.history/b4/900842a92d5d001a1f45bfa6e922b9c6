@@ -1,0 +1,13 @@
+package com.isb.journal.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.isb.journal.entity.relacional.JournalEntityOracle;
+
+public interface RepositoryOracleDTO extends JpaRepository<JournalEntityOracle, Integer>{
+
+}
+

@@ -1,0 +1,63 @@
+package com.isb.posting.entity;
+
+import javax.validation.constraints.NotNull;
+
+public class MovementActions {
+
+	@NotNull
+	private Boolean skipAuthorizationWarning;
+	
+	@NotNull
+	private Boolean skipUnavailableBalanceAction;
+
+	@NotNull
+	private Boolean skipBlock30Days;
+	
+	@NotNull
+	private Boolean forceExecution;
+	
+	@NotNull
+	private String withholdingId;
+
+	public Boolean getSkipAuthorizationWarning() {
+		return skipAuthorizationWarning;
+	}
+
+	public void setSkipAuthorizationWarning(Boolean skipAuthorizationWarning) {
+		this.skipAuthorizationWarning = skipAuthorizationWarning;
+	}
+
+	public Boolean getSkipUnavailableBalanceAction() {
+		return skipUnavailableBalanceAction;
+	}
+
+	public void setSkipUnavailableBalanceAction(Boolean skipUnavailableBalanceAction) {
+		this.skipUnavailableBalanceAction = skipUnavailableBalanceAction;
+	}
+
+	public Boolean getSkipBlock30Days() {
+		return skipBlock30Days;
+	}
+
+	public void setSkipBlock30Days(Boolean skipBlock30Days) {
+		this.skipBlock30Days = skipBlock30Days;
+	}
+
+	public Boolean getForceExecution() {
+		return forceExecution;
+	}
+
+	public void setForceExecution(Boolean forceExecution) {
+		this.forceExecution = forceExecution;
+	}
+
+	public String getWithholdingId() {
+		return withholdingId;
+	}
+
+	public void setWithholdingId(String withholdingId) {
+		this.withholdingId = withholdingId;
+	}
+
+
+}

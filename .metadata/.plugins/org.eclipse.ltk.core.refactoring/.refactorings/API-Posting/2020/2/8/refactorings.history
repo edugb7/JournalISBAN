@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.isb.posting.entity.Contract.java&apos; to &apos;PostingGroup.java&apos;&#x0D;&#x0A;- Original project: &apos;API-Posting&apos;&#x0D;&#x0A;- Original element: &apos;com.isb.posting.entity.Contract.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.isb.posting.entity.PostingGroup.java&apos;" description="Rename compilation unit &apos;Contract.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.isb.posting.entity{Contract.java" name="PostingGroup.java" references="false" stamp="1582210407264" version="1.0"/>
+</session>

@@ -1,0 +1,5 @@
+package com.isb.journal.exception;
+
+public class CustomAuthenticationEntryPoint {
+
+}

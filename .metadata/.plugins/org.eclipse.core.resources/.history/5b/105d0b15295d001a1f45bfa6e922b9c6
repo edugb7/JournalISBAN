@@ -1,0 +1,129 @@
+package com.isb.journal.entity.relacional;
+
+import java.io.Serializable;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.PrimaryKeyJoinColumns;
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.boot.context.properties.bind.DefaultValue;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+@Table(name="journal_operation_data")
+//@Access(AccessType.FIELD) 
+@Inheritance(strategy=InheritanceType.JOINED)
+public class JournalOperationData implements Serializable {
+
+	private static final long serialVersionUID = 5158792392608451900L;
+
+	@Id
+	@JsonIgnore
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
+	@NotNull
+	@NotEmpty 
+	private String companyCode; 
+	
+	@NotNull
+	private String instanceCode;
+	
+	@NotNull 
+	private String journalOperationType;
+	
+	private String externalReference;
+	
+	@NotNull
+	private String mainContract;
+	
+	public JournalOperationData(@NotNull String companyCode, @NotNull String journalOperationType,
+			String externalReference, @NotNull String mainContract, @NotNull String instanceCode,
+			JournalOperationRequest journalOperationRequest) {
+		super();
+		this.companyCode = companyCode;
+		this.journalOperationType = journalOperationType;
+		this.externalReference = externalReference;
+		this.mainContract = mainContract;
+		this.instanceCode = instanceCode;
+		this.journalOperationRequest = journalOperationRequest;
+	}
+
+	public JournalOperationData() {
+		super();
+	}
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getCompanyCode() {
+		return companyCode;
+	}
+	
+	public String getInstanceCode() {
+		return instanceCode;
+	}
+
+	public void setInstanceCode(String instanceCode) {
+		this.instanceCode = instanceCode;
+	}
+
+	public void setCompanyCode(String companyCode) {
+		this.companyCode = companyCode;
+	}
+
+	public String getJournalOperationType() {
+		return journalOperationType;
+	}
+
+	public void setJournalOperationType(String journalOperationType) {
+		this.journalOperationType = journalOperationType;
+	}
+
+	public String getExternalReference() {
+		return externalReference;
+	}
+
+	public void setExternalReference(String externalReference) {
+		this.externalReference = externalReference;
+	}
+
+	public String getMainContract() {
+		return mainContract;
+	}
+
+	public void setMainContract(String mainContract) {
+		this.mainContract = mainContract;
+	}
+
+	public JournalOperationRequest getJournalOperationRequest() {
+		return journalOperationRequest;
+	}
+
+	public void setJournalOperationRequestPost(JournalOperationRequest journalOperationRequest) {
+		this.journalOperationRequest = journalOperationRequest;
+	}
+	
+	
+}

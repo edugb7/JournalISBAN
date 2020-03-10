@@ -1,0 +1,59 @@
+package com.isb.journal.entity.relacional;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.PrimaryKeyJoinColumns;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="accounting_cost_center")
+@Access(AccessType.FIELD)
+public class AccountingCostCenter {
+
+	private static final long serialVersionUID = -3109960402924375707L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_accounting", unique = true, nullable = false)
+	private Integer id;
+	
+	@Column(name="accounting_company")
+	private String accountingCompany;
+	
+	@Column(name="accounting_center")
+	private String accountingCenter;
+
+	public AccountingCostCenter(String accountingCompany, String accountingCenter) {
+		super();
+		this.accountingCompany = accountingCompany;
+		this.accountingCenter = accountingCenter;
+	}
+
+	public AccountingCostCenter() {
+		super();
+	}
+	
+	public String getAccountingCompany() {
+		return accountingCompany;
+	}
+
+	public void setAccountingCompany(String accountingCompany) {
+		this.accountingCompany = accountingCompany;
+	}
+
+	public String getAccountingCenter() {
+		return accountingCenter;
+	}
+
+	public void setAccountingCenter(String accountingCenter) {
+		this.accountingCenter = accountingCenter;
+	}
+	
+	
+}

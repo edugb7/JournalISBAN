@@ -1,0 +1,82 @@
+package com.isb.journal.entity.relacional;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+@Table(name="journal_operation_data")
+public class JournalOperationData {
+
+	@Id
+	@JsonIgnore
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
+	@NotBlank
+	private String companyCode;
+	
+	@NotBlank
+	private String instanceCode;
+	
+	@NotBlank
+	private String journalOperationType;
+	
+	private String externalReference;
+
+	private String mainContract;
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getCompanyCode() {
+		return companyCode;
+	}
+
+	public void setCompanyCode(String companyCode) {
+		this.companyCode = companyCode;
+	}
+
+	public String getInstanceCode() {
+		return instanceCode;
+	}
+
+	public void setInstanceCode(String instanceCode) {
+		this.instanceCode = instanceCode;
+	}
+
+	public String getJournalOperationType() {
+		return journalOperationType;
+	}
+
+	public void setJournalOperationType(String journalOperationType) {
+		this.journalOperationType = journalOperationType;
+	}
+
+	public String getExternalReference() {
+		return externalReference;
+	}
+
+	public void setExternalReference(String externalReference) {
+		this.externalReference = externalReference;
+	}
+
+	public String getMainContract() {
+		return mainContract;
+	}
+
+	public void setMainContract(String mainContract) {
+		this.mainContract = mainContract;
+	}
+	
+}

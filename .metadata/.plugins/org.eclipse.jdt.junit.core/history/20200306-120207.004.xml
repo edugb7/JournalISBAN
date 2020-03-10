@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="API-Posting" project="API-Posting" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.isb.posting.test.AccountsPostingTests" time="6.163" displayname="AccountsPostingTests" uniqueid="[engine:junit-jupiter]/[class:com.isb.posting.test.AccountsPostingTests]">
+    <testcase name="deleteInfo_ShouldReturnOKtatusAndCorrectInfo" classname="com.isb.posting.test.AccountsPostingTests" time="4.824" displayname="deleteInfo_ShouldReturnOKtatusAndCorrectInfo()" uniqueid="[engine:junit-jupiter]/[class:com.isb.posting.test.AccountsPostingTests]/[method:deleteInfo_ShouldReturnOKtatusAndCorrectInfo()]"/>
+    <testcase name="postInfo_ShouldReturnOKtatusAndCorrectInfo" classname="com.isb.posting.test.AccountsPostingTests" time="1.339" displayname="postInfo_ShouldReturnOKtatusAndCorrectInfo()" uniqueid="[engine:junit-jupiter]/[class:com.isb.posting.test.AccountsPostingTests]/[method:postInfo_ShouldReturnOKtatusAndCorrectInfo()]"/>
+  </testsuite>
+</testrun>

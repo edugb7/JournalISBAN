@@ -1,0 +1,130 @@
+package com.isb.conciliator.entity;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.UUID;
+
+import javax.validation.constraints.NotNull;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import io.swagger.annotations.ApiModelProperty;
+
+@Document(value = "movements_conciliator")
+public class ConciliatorEntity implements Serializable {
+
+	private static final long serialVersionUID = 1579984741940954470L;
+
+	@Id
+	@ApiModelProperty(value = "The journal operation's id", required = true)
+	private UUID journalOperationId = UUID.randomUUID();
+	
+	@NotNull
+	@ApiModelProperty(value = "The movement conciliator's id", required = true)
+	private String movementId;
+	
+	private String bundle;
+	
+	private String serviceId;
+	
+	private Contract contract;
+	
+	@NotNull
+	@ApiModelProperty(value = "The balance position", required = true)
+	private String balancePosition;
+	
+	@NotNull
+	@ApiModelProperty(value = "The operation type", required = true)
+	private String operationType;
+	
+	private MovementAmount movementAmount;
+	
+	@NotNull
+	@ApiModelProperty(value = "The movement code", required = true)
+	private String movementCode;
+	
+	private List<CertificationMsgData> certificationMsgList;
+
+	public String getMovementId() {
+		return movementId;
+	}
+
+	public void setMovementId(String movementId) {
+		this.movementId = movementId;
+	}
+
+	public UUID getJournalOperationId() {
+		return journalOperationId;
+	}
+
+	public void setJournalOperationId(UUID journalOperationId) {
+		this.journalOperationId = journalOperationId;
+	}
+
+	public String getBundle() {
+		return bundle;
+	}
+
+	public void setBundle(String bundle) {
+		this.bundle = bundle;
+	}
+
+	public String getServiceId() {
+		return serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
+	}
+
+	public Contract getContract() {
+		return contract;
+	}
+
+	public void setContract(Contract contract) {
+		this.contract = contract;
+	}
+
+	public String getBalancePosition() {
+		return balancePosition;
+	}
+
+	public void setBalancePosition(String balancePosition) {
+		this.balancePosition = balancePosition;
+	}
+
+	public String getOperationType() {
+		return operationType;
+	}
+
+	public void setOperationType(String operationType) {
+		this.operationType = operationType;
+	}
+
+	public MovementAmount getMovementAmount() {
+		return movementAmount;
+	}
+
+	public void setMovementAmount(MovementAmount movementAmount) {
+		this.movementAmount = movementAmount;
+	}
+
+	public String getMovementCode() {
+		return movementCode;
+	}
+
+	public void setMovementCode(String movementCode) {
+		this.movementCode = movementCode;
+	}
+
+	public List<CertificationMsgData> getCertificationMsgList() {
+		return certificationMsgList;
+	}
+
+	public void setCertificationMsgList(List<CertificationMsgData> certificationMsgList) {
+		this.certificationMsgList = certificationMsgList;
+	}
+	
+	
+}

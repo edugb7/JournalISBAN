@@ -1,0 +1,55 @@
+package com.isb.journal.entity.relacional;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name="journal_operation_request")
+public class JournalOperationRequest implements Serializable {
+
+	private static final long serialVersionUID = -8066273749268573211L;
+
+	@Id
+	@JsonIgnore
+	@Column(columnDefinition = "BINARY(16)")
+	private UUID id;
+
+	@OneToMany(orphanRemoval=true) 
+    @JoinColumn(name="operation_request_id") 
+	private List<JournalOperationData> journalOperationList = new ArrayList<>();
+	
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "journalOperationRequest")
+	private OperationAmount operationAmount;
+	
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "journalOperationRequest")
+	private AccountingCostCenter accountingCostCenter;
+	
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "journalOperationRequest")
+	private TargetCostCenter targetCostCenter;
+	
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "journalOperationRequest")
+	private UserCostCenter userCostCenter;
+	
+	private String postingType;
+	
+	@OneToOne
+	@JoinColumn(name = "id")
+	private JournalEntityOracle journalEntityOracle;
+
+}

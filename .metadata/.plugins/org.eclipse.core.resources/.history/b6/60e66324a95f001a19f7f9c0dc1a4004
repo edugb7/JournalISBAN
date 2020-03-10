@@ -1,0 +1,76 @@
+package com.isb.posting.test;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.annotation.DirtiesContext.ClassMode;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.WebApplicationContext;
+
+import com.isb.posting.repository.PostingRepositoryDTO;
+
+@ExtendWith(SpringExtension.class)
+@SpringBootTest
+@Transactional
+@DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
+public class AccountsPostingTests {
+
+	private static String id = "bfab4693-82a2-4ca3-b951-72367b487626";
+	
+	@Autowired
+    protected PostingRepositoryDTO dto;
+	
+	@Autowired
+    protected WebApplicationContext webApplicationContext;
+ 
+    private MockMvc mockMvc;
+ 
+    
+    @BeforeEach
+    public void setUp() {
+        mockMvc = MockMvcBuilders.webAppContextSetup(this.webApplicationContext).build();
+    }
+	    
+	@Test
+	public void postInfo_ShouldReturnOKtatusAndCorrectInfo() throws Exception {
+		String jsonBody = 
+    			"{\"id\":\"41c5f480-d9e9-443f-abf3-f0f3de2504a8\",\"externalReference\":\"1234567890123456789012345674890\",\"bundle\":\"450e8400-e29b-41d4-a716-446655440000\",\"actionCommit\":true,\"postingGroup\":[{\"contract\":{\"contractId\":\"004916553001234567001\",\"contractType\":\"BBAN\"},\"operationType\":\"Credit\",\"operationId\":\"1234\",\"operationAmount\":{\"amount\":1.2345678901234512E16,\"currency\":\"EUR\"},\"journalOperationId\":\"550e8400-e29b-41d4-a716-446655440000\",\"journalOperationType\":\"0049103001009004\",\"movementCode\":\"3\",\"movementActions\":{\"skipAuthorizationWarning\":true,\"skipUnavailableBalanceAction\":false,\"skipBlock30Days\":false,\"forceExecution\":true,\"withholdingId\":\"2020-01-17.01.02.02.123456EH\"}}]}";
+
+    	HttpHeaders headers = new HttpHeaders();
+    	headers.add("X-IBM-Client-Id", "a1b30a84-7bf3-442e-84a0-e935d8163b5a");
+    	headers.add("X-Santander-Global-Id", "a315bt3v0a84");
+    	headers.add("Authorization", "Bearer 923ioh89r23ohwedh823ohdn9hite89yyugfsdf");
+    	
+        mockMvc.perform(post("/accounts/account_transactions")
+        		.content(jsonBody.trim())
+        		.headers(headers)
+        		.contentType(MediaType.APPLICATION_JSON))
+        		.andExpect(status().isOk());
+	}
+	
+	@Test
+	public void deleteInfo_ShouldReturnOKtatusAndCorrectInfo() throws Exception {
+    	HttpHeaders headers = new HttpHeaders();
+    	headers.add("X-IBM-Client-Id", "a1b30a84-7bf3-442e-84a0-e935d8163b5a");
+    	headers.add("X-Santander-Global-Id", "a315bt3v0a84");
+    	headers.add("Authorization", "Bearer 923ioh89r23ohwedh823ohdn9hite89yyugfsdf");
+    	
+        mockMvc.perform(delete("/accounts/account_transactions/{journalOperationId}", id)
+        		.headers(headers)
+        		.contentType(MediaType.APPLICATION_JSON))
+        		.andExpect(status().isOk());
+	}
+	
+}

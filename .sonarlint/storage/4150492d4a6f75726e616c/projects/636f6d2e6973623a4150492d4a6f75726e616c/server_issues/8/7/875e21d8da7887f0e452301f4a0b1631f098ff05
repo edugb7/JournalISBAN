@@ -1,0 +1,11 @@
+Ì
+=src/main/java/com/isb/journal/controller/ControllerMongo.javacom.isb:API-Journalsquid"RedundantThrowsDeclarationCheck(52tRemove the declaration of thrown exception 'com.isb.journal.exception.BadRequestError' which is a runtime exception.:MINORROPENZ 524131b76fced9cf9f28402e1f481448hÀÆÌˆˆ.r
+CODE_SMELLzAXCBE5nD3uGA0WAYtDdq‚
+=src/main/java/com/isb/journal/controller/ControllerMongo.javacom.isb:API-Journalsquid"CallToDeprecatedMethod($23Remove this use of "description"; it is deprecated.:MINORROPENZ f1f9e9931ec9156f8012e82e4d70ad4ehÀÆÌˆˆ.r
+CODE_SMELLzAXCBE5nD3uGA0WAYtDdtÌ
+=src/main/java/com/isb/journal/controller/ControllerMongo.javacom.isb:API-Journalsquid"RedundantThrowsDeclarationCheck(I2tRemove the declaration of thrown exception 'com.isb.journal.exception.BadRequestError' which is a runtime exception.:MINORROPENZ 524131b76fced9cf9f28402e1f481448hˆÐÀ¬Š.r
+CODE_SMELLzAXClkGf03uGA0WAYtE3JÊ
+=src/main/java/com/isb/journal/controller/ControllerMongo.javacom.isb:API-Journalsquid"RedundantThrowsDeclarationCheck(V2rRemove the declaration of thrown exception 'com.isb.journal.exception.ErrorNotFound' which is a runtime exception.:MINORROPENZ 3db3e694e7e0c0802ffac7bd04428445hˆÐÀ¬Š.r
+CODE_SMELLzAXClkGf03uGA0WAYtE3KÊ
+=src/main/java/com/isb/journal/controller/ControllerMongo.javacom.isb:API-Journalsquid"RedundantThrowsDeclarationCheck(`2rRemove the declaration of thrown exception 'com.isb.journal.exception.ErrorNotFound' which is a runtime exception.:MINORROPENZ 4b30d504f8b2ab6245945317c708130ehˆÐÀ¬Š.r
+CODE_SMELLzAXClkGf03uGA0WAYtE3L

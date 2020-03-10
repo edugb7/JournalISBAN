@@ -1,0 +1,26 @@
+package com.isb.interapplication.entity;
+
+public class TargetCostCenter {
+
+	private String targetCompany;
+	
+	private String targetCenter;
+
+	public String getTargetCompany() {
+		return targetCompany;
+	}
+
+	public void setTargetCompany(String targetCompany) {
+		this.targetCompany = targetCompany;
+	}
+
+	public String getTargetCenter() {
+		return targetCenter;
+	}
+
+	public void setTargetCenter(String targetCenter) {
+		this.targetCenter = targetCenter;
+	}
+	
+	
+}

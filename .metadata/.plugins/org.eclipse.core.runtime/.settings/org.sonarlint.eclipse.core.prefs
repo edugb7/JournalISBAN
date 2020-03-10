@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+servers/API-Conciliator/auth=true
+servers/API-Conciliator/notificationsEnabled=false
+servers/API-Conciliator/url=http\://localhost\:9000
+servers/API-Interapplication/auth=true
+servers/API-Interapplication/notificationsEnabled=false
+servers/API-Interapplication/url=http\://localhost\:9000
+servers/API-Journal/auth=true
+servers/API-Journal/notificationsEnabled=false
+servers/API-Journal/url=http\://localhost\:9000
+servers/API-Posting/auth=true
+servers/API-Posting/notificationsEnabled=false
+servers/API-Posting/url=http\://localhost\:9000

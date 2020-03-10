@@ -1,0 +1,16 @@
+package com.isb.posting.entity;
+
+import javax.validation.constraints.NotNull;
+
+import lombok.Data;
+
+@Data
+public class Contract {
+
+	@NotNull
+	private String contractId;
+	
+	@NotNull
+	private String contractType;
+	
+}

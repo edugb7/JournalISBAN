@@ -1,0 +1,63 @@
+package com.isb.journal.entity.norelacional;
+
+import java.io.Serializable;
+
+import javax.validation.constraints.NotNull;
+
+public class JournalOperationData implements Serializable {
+
+	@NotNull
+	private String companyCode;
+	
+	@NotNull
+	private String instanceCode;
+	
+	@NotNull 
+	private String journalOperationType;
+	
+	private String externalReference;
+	
+	@NotNull
+	private String mainContract;
+	
+	public String getInstanceCode() {
+		return instanceCode;
+	}
+
+	public void setInstanceCode(String instanceCode) {
+		this.instanceCode = instanceCode;
+	}
+
+	public String getJournalOperationType() {
+		return journalOperationType;
+	}
+
+	public void setJournalOperationType(String journalOperationType) {
+		this.journalOperationType = journalOperationType;
+	}
+
+	public String getCompanyCode() {
+		return companyCode;
+	}
+
+	public void setCompanyCode(String companyCode) {
+		this.companyCode = companyCode;
+	}
+
+	public String getExternalReference() {
+		return externalReference;
+	}
+
+	public void setExternalReference(String externalReference) {
+		this.externalReference = externalReference;
+	}
+
+	public String getMainContract() {
+		return mainContract;
+	}
+
+	public void setMainContract(String mainContract) {
+		this.mainContract = mainContract;
+	}
+	
+}

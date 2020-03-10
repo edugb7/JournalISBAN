@@ -1,0 +1,59 @@
+package com.isb.journal.entity.relacional;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.PrimaryKeyJoinColumns;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="user_cost_center")
+@Access(AccessType.FIELD)
+public class UserCostCenter extends JournalOperationRequest {
+
+	private static final long serialVersionUID = 6919958207018039868L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_user", unique = true, nullable = false)
+	private Integer id;
+	
+	@Column(name="user_company")
+	private String userCompany;
+	
+	@Column(name="user_center")
+	private String userCenter;
+
+	public UserCostCenter(String userCompany, String userCenter) {
+		super();
+		this.userCompany = userCompany;
+		this.userCenter = userCenter;
+	}
+
+	public UserCostCenter() {
+		super();
+	}
+	
+	public String getUserCompany() {
+		return userCompany;
+	}
+
+	public void setUserCompany(String userCompany) {
+		this.userCompany = userCompany;
+	}
+
+	public String getUserCenter() {
+		return userCenter;
+	}
+
+	public void setUserCenter(String userCenter) {
+		this.userCenter = userCenter;
+	}
+	
+	
+}

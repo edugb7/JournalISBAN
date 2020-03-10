@@ -1,0 +1,14 @@
+package com.isb.conciliator.entity;
+
+import java.io.Serializable;
+
+import lombok.Data;
+
+@Data
+public class Contract implements Serializable {
+
+	private String contractId;
+	
+	private String contractType;
+
+}

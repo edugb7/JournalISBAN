@@ -1,0 +1,30 @@
+package com.isb.interapplication.entity;
+
+import java.io.Serializable;
+
+public class TargetCostCenter implements Serializable {
+
+	private static final long serialVersionUID = 1547453817909989366L;
+
+	private String targetCompany;
+	
+	private String targetCenter;
+
+	public String getTargetCompany() {
+		return targetCompany;
+	}
+
+	public void setTargetCompany(String targetCompany) {
+		this.targetCompany = targetCompany;
+	}
+
+	public String getTargetCenter() {
+		return targetCenter;
+	}
+
+	public void setTargetCenter(String targetCenter) {
+		this.targetCenter = targetCenter;
+	}
+	
+	
+}

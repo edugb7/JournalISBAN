@@ -1,0 +1,31 @@
+package com.isb.journal.entity.relacional;
+
+import java.io.Serializable;
+import java.util.UUID;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.validation.Valid;
+
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name = "journal")
+public class JournalEntityOracle implements Serializable {
+
+	private static final long serialVersionUID = 8974481198928091539L;
+
+	@Id
+	@Column(name = "id", updatable = false, nullable = false, columnDefinition = "BINARY(16)")
+	private UUID journalOperationId = UUID.randomUUID();
+
+	@Valid
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "journalEntityOracle")
+	private JournalOperationRequest journalOperationRequest;
+
+}

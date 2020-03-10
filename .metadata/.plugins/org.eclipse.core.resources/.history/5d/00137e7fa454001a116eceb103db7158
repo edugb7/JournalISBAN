@@ -1,0 +1,36 @@
+package com.isb.journal.entity;
+
+public class UserCostCenter {
+
+	private String userCompany;
+	
+	private String userCenter;
+
+	public UserCostCenter(String userCompany, String userCenter) {
+		super();
+		this.userCompany = userCompany;
+		this.userCenter = userCenter;
+	}
+
+	public UserCostCenter() {
+		super();
+	}
+
+	public String getUserCompany() {
+		return userCompany;
+	}
+
+	public void setUserCompany(String userCompany) {
+		this.userCompany = userCompany;
+	}
+
+	public String getUserCenter() {
+		return userCenter;
+	}
+
+	public void setUserCenter(String userCenter) {
+		this.userCenter = userCenter;
+	}
+	
+	
+}

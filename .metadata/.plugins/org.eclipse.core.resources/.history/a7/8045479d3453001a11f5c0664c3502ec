@@ -1,0 +1,68 @@
+package com.isb.journal.controller;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.isb.journal.entity.JournalEntity;
+import com.isb.journal.service.JournalService;
+
+@RestController()
+@Validated
+@RequestMapping("/journal_operations")
+public class Controller {
+
+	@Autowired
+	private JournalService dto;
+	
+	@PostMapping(value="/create_journal_operation", produces = MediaType.APPLICATION_JSON_VALUE,
+			consumes = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(HttpStatus.CREATED)
+	public JournalEntity createEntity(@Valid @RequestBody JournalEntity journalEntity) {
+		
+		//TODO comprobar validacion de entidad
+		
+		return dto.save(journalEntity);
+	}
+	
+	@PutMapping(value="/{journal_operation_id}")
+	@ResponseStatus(HttpStatus.OK)
+	public JournalEntity modidfyEntity(@PathVariable("journal_operation_id") Integer id, @Valid @RequestBody JournalEntity journalEntity) {
+		
+		//TODO comprobar validacion de entidad
+		
+		journalEntity.setId(id);
+		
+		return dto.save(journalEntity);
+
+	}
+	
+	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Object> getAll() throws Exception {
+		
+       return new ResponseEntity<>(dto.findAll(), HttpStatus.OK);  
+	}
+    
+	@GetMapping(path="/{journal_operation_id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Object> getById(@PathVariable(value="journal_operation_id") Integer id) throws Exception  {
+	
+		
+		JournalEntity jourEnt = dto.findById(id);
+
+        return new ResponseEntity<>(jourEnt, HttpStatus.OK);
+
+	}
+
+}

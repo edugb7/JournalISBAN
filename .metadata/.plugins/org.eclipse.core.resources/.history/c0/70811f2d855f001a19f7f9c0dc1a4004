@@ -1,0 +1,59 @@
+package com.isb.interapplication.controller;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+
+import com.isb.interapplication.exception.BadRequestError;
+import com.isb.interapplication.exception.ErrorNotFound;
+import com.isb.interapplication.exception.GenericException;
+
+@ControllerAdvice(annotations = RestController.class)
+public class ErrorRestController extends ResponseEntityExceptionHandler {
+
+	static String code = "code";
+	static String message = "message";
+	static String level = "level";
+	static String description = "description";
+	
+	Map<String, Object> body = new LinkedHashMap<>();
+	
+    @ExceptionHandler(value= {BadRequestError.class, BadRequestError.class})
+    public ResponseEntity<Object> springHandleBadRequest(HttpServletResponse response, Exception e) throws InstantiationException, IllegalAccessException {
+    	
+    	GenericException ex = (GenericException) e.getClass().newInstance();
+
+        body.put(code, ex.getCode());
+        body.put(message, ex.getMessage());
+        body.put(level, ex.getLevel());
+        body.put(description, ex.getDescription());
+    		
+        return new ResponseEntity<>(body, HttpStatus.valueOf(ex.getCode()));
+    }
+
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException e,
+           HttpHeaders headers, HttpStatus status, WebRequest request) {
+
+    	BadRequestError ex = new BadRequestError();
+ 
+        body.put(code, ex.getCode());
+        body.put(message, ex.getMessage());
+        body.put(level, ex.getLevel());
+        body.put(description, ex.getDescription());
+
+        return new ResponseEntity<>(body, headers, status);
+
+    }
+}

@@ -1,0 +1,12 @@
+package com.isb.journal.repository;
+
+import java.util.UUID;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.isb.journal.entity.relacional.JournalOperationData;
+import com.isb.journal.entity.relacional.OperationAmount;
+
+public interface RepositoryOperationAmountDTO extends JpaRepository<OperationAmount, UUID>{
+
+}
+

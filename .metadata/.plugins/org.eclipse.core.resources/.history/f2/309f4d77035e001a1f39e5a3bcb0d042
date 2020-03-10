@@ -1,0 +1,11 @@
+package com.isb.posting.repository;
+
+import java.util.UUID;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.isb.posting.entity.Contract;
+
+public interface PostingRepositoryDTO extends MongoRepository<Contract, UUID> {
+
+}

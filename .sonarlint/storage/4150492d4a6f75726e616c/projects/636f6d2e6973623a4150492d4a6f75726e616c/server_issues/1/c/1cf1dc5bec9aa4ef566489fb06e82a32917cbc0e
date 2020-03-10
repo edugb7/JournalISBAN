@@ -1,0 +1,13 @@
+É
+>src/main/java/com/isb/journal/controller/ControllerOracle.javacom.isb:API-Journalsquid"CallToDeprecatedMethod(+23Remove this use of "description"; it is deprecated.:MINORROPENZ 09b88302d4db672e4b7de961aaf6d3dah¿∆Ãàà.r
+CODE_SMELLzAXCBE5pQ3uGA0WAYtDeCÕ
+>src/main/java/com/isb/journal/controller/ControllerOracle.javacom.isb:API-Journalsquid"RedundantThrowsDeclarationCheck(?2tRemove the declaration of thrown exception 'com.isb.journal.exception.BadRequestError' which is a runtime exception.:MINORROPENZ c1f2b0cf0e8b4b94be0b8c81cf9e0c26hËÑ•¨ä.r
+CODE_SMELLzAXCliYhU3uGA0WAYtE2-Õ
+>src/main/java/com/isb/journal/controller/ControllerOracle.javacom.isb:API-Journalsquid"RedundantThrowsDeclarationCheck(U2tRemove the declaration of thrown exception 'com.isb.journal.exception.BadRequestError' which is a runtime exception.:MINORROPENZ c1f2b0cf0e8b4b94be0b8c81cf9e0c26hËÑ•¨ä.r
+CODE_SMELLzAXCliYhU3uGA0WAYtE2_À
+>src/main/java/com/isb/journal/controller/ControllerOracle.javacom.isb:API-Journalsquid"RedundantThrowsDeclarationCheck(_2rRemove the declaration of thrown exception 'com.isb.journal.exception.ErrorNotFound' which is a runtime exception.:MINORROPENZ cdded47a3cf358ffbaf468d19bb28b4chËÑ•¨ä.r
+CODE_SMELLzAXCliYhU3uGA0WAYtE3AÀ
+>src/main/java/com/isb/journal/controller/ControllerOracle.javacom.isb:API-Journalsquid"RedundantThrowsDeclarationCheck(g2rRemove the declaration of thrown exception 'com.isb.journal.exception.ErrorNotFound' which is a runtime exception.:MINORROPENZ a9b6ec52180949e529ba27f2a1c4aa83hËÑ•¨ä.r
+CODE_SMELLzAXCliYhU3uGA0WAYtE3Bö
+>src/main/java/com/isb/journal/controller/ControllerOracle.javacom.isb:API-Journalsquid"S1488(W2[Immediately return this expression instead of assigning it to the temporary variable "obj".:MINORROPENZ 95738b99e281a4aef34c71c4a8668fech–«©≤ä.r
+CODE_SMELLzAXCmSpPM3uGA0WAYtFKJ

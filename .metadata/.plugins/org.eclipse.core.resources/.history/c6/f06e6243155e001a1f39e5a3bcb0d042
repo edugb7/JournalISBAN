@@ -1,0 +1,55 @@
+package com.isb.journal.entity.relacional;
+
+import java.util.UUID;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+@Table(name="target_cost_center")
+public class TargetCostCenter {
+
+	@Id
+	@JsonIgnore
+	@Column(columnDefinition = "BINARY(16)")
+	private UUID id;
+	
+	private String targetCompany;
+	
+	private String targetCenter;
+	
+	@OneToOne
+	@JoinColumn(name = "id")
+	private JournalOperationRequest journalOperationRequest;
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
+	}
+
+	public String getTargetCompany() {
+		return targetCompany;
+	}
+
+	public void setTargetCompany(String targetCompany) {
+		this.targetCompany = targetCompany;
+	}
+
+	public String getTargetCenter() {
+		return targetCenter;
+	}
+
+	public void setTargetCenter(String targetCenter) {
+		this.targetCenter = targetCenter;
+	}
+
+}

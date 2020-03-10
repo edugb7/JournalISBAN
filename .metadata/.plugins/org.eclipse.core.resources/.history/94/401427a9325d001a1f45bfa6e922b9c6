@@ -1,0 +1,142 @@
+package com.isb.journal.entity.relacional;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.PrimaryKeyJoinColumns;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+@Table(name="journal_operation_request")
+@Access(AccessType.FIELD)
+public class JournalOperationRequest {
+
+	@Id
+	@JsonIgnore
+	@Column(columnDefinition = "BINARY(16)")
+	private UUID id;
+
+	@OneToMany(cascade= {CascadeType.ALL}, targetEntity = JournalOperationData.class, orphanRemoval = true)
+	@JoinColumn(name = "request_id")
+	private List<JournalOperationData> journalOperationList = new ArrayList<>();
+
+	@OneToOne
+	@JoinColumn(name = "id")
+	private JournalEntityOracle journalEntityOracle;
+	
+	@OneToOne(cascade = {CascadeType.ALL}, targetEntity = OperationAmount.class)
+	//@PrimaryKeyJoinColumn(name = "operation_amount")
+	@JoinColumn(name="request_id")
+	private OperationAmount operationAmount;
+	
+	@OneToOne(cascade = {CascadeType.ALL}, targetEntity = AccountingCostCenter.class)
+	//@PrimaryKeyJoinColumn(name = "accounting_cost_center")
+	@JoinColumn(name="request_id")
+	private AccountingCostCenter accountingCostCenter;
+	
+	@OneToOne(cascade = {CascadeType.ALL}, targetEntity = TargetCostCenter.class)
+	//@PrimaryKeyJoinColumn(name = "target_cost_center")
+	@JoinColumn(name="request_id")
+	private TargetCostCenter targetCostCenter;
+	
+	@OneToOne(cascade = {CascadeType.ALL}, targetEntity = UserCostCenter.class)
+	//@PrimaryKeyJoinColumn(name = "user_cost_center")
+	@JoinColumn(name="request_id")
+	private UserCostCenter userCostCenter;
+
+	//private ObbSpecificData obbSpecificData;
+	
+	@Column(name="posting_type")
+	private String postingType;
+
+	public JournalOperationRequest() {
+		super();
+	}
+
+	public JournalOperationRequest(UUID id, List<JournalOperationData> journalOperationList,
+			OperationAmount operationAmount, AccountingCostCenter accountingCostCenter,
+			TargetCostCenter targetCostCenter, UserCostCenter userCostCenter, String postingType) {
+		super();
+		this.id = id;
+		this.journalOperationList = journalOperationList;
+		this.operationAmount = operationAmount;
+		this.accountingCostCenter = accountingCostCenter;
+		this.targetCostCenter = targetCostCenter;
+		this.userCostCenter = userCostCenter;
+		this.postingType = postingType;
+	}
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
+	}
+
+	public List<JournalOperationData> getJournalOperationList() {
+		return journalOperationList;
+	}
+
+	public void setJournalOperationList(List<JournalOperationData> journalOperationList) {
+		this.journalOperationList = journalOperationList;
+	}
+
+	public OperationAmount getOperationAmount() {
+		return operationAmount;
+	}
+
+	public void setOperationAmount(OperationAmount operationAmount) {
+		this.operationAmount = operationAmount;
+	}
+
+	public AccountingCostCenter getAccountingCostCenter() {
+		return accountingCostCenter;
+	}
+
+	public void setAccountingCostCenter(AccountingCostCenter accountingCostCenter) {
+		this.accountingCostCenter = accountingCostCenter;
+	}
+
+	public TargetCostCenter getTargetCostCenter() {
+		return targetCostCenter;
+	}
+
+	public void setTargetCostCenter(TargetCostCenter targetCostCenter) {
+		this.targetCostCenter = targetCostCenter;
+	}
+
+	public UserCostCenter getUserCostCenter() {
+		return userCostCenter;
+	}
+
+	public void setUserCostCenter(UserCostCenter userCostCenter) {
+		this.userCostCenter = userCostCenter;
+	}
+
+	public String getPostingType() {
+		return postingType;
+	}
+
+	public void setPostingType(String postingType) {
+		this.postingType = postingType;
+	}
+
+}

@@ -1,0 +1,78 @@
+package com.isb.journal.entity.norelacional;
+
+import java.io.Serializable;
+import java.util.List;
+
+public class JournalOperationRequest implements Serializable {
+
+	private List<JournalOperationData> journalOperationList;
+
+	private OperationAmount operationAmount;
+	
+	private AccountingCostCenter accountingCostCenter;
+	
+	private TargetCostCenter targetCostCenter;
+	
+	private UserCostCenter userCostCenter;
+	
+	//private ObbSpecificData obbSpecificData;
+	
+	private String postingType;
+
+	public List<JournalOperationData> getJournalOperationList() {
+		return journalOperationList;
+	}
+
+	public void setJournalOperationList(List<JournalOperationData> journalOperationList) {
+		this.journalOperationList = journalOperationList;
+	}
+
+	public OperationAmount getOperationAmount() {
+		return operationAmount;
+	}
+
+	public void setOperationAmount(OperationAmount operationAmount) {
+		this.operationAmount = operationAmount;
+	}
+
+	public AccountingCostCenter getAccountingCostCenter() {
+		return accountingCostCenter;
+	}
+
+	public void setAccountingCostCenter(AccountingCostCenter accountingCostCenter) {
+		this.accountingCostCenter = accountingCostCenter;
+	}
+
+	public TargetCostCenter getTargetCostCenter() {
+		return targetCostCenter;
+	}
+
+	public void setTargetCostCenter(TargetCostCenter targetCostCenter) {
+		this.targetCostCenter = targetCostCenter;
+	}
+
+	public UserCostCenter getUserCostCenter() {
+		return userCostCenter;
+	}
+
+	public void setUserCostCenter(UserCostCenter userCostCenter) {
+		this.userCostCenter = userCostCenter;
+	}
+
+//	public ObbSpecificData getObbSpecificData() {
+//		return obbSpecificData;
+//	}
+//
+//	public void setObbSpecificData(ObbSpecificData obbSpecificData) {
+//		this.obbSpecificData = obbSpecificData;
+//	}
+
+	public String getPostingType() {
+		return postingType;
+	}
+
+	public void setPostingType(String postingType) {
+		this.postingType = postingType;
+	}
+	
+}

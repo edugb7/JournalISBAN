@@ -1,0 +1,118 @@
+package com.isb.interapplication.entity;
+
+import java.io.Serializable;
+
+import javax.validation.constraints.NotNull;
+
+public class InterapplicationOrderRequest implements Serializable {
+
+	@NotNull
+	private String sourceIntapp;
+	
+	@NotNull
+	private String targetIntapp;
+	
+	@NotNull
+	private String journalOperationId;
+	
+	@NotNull
+	private String bundle;
+	
+	private TargetCostCenter targetCostCenter;
+	
+	private SourceCostCenter sourceCostCenter;
+	
+	@NotNull
+	private String orderText;
+	
+	@NotNull
+	private String movementText;
+	
+	@NotNull
+	private OperationAmount operationAmount;
+	
+	@NotNull
+	private String movementCode;
+
+	public String getSourceIntapp() {
+		return sourceIntapp;
+	}
+
+	public void setSourceIntapp(String sourceIntapp) {
+		this.sourceIntapp = sourceIntapp;
+	}
+
+	public String getTargetIntapp() {
+		return targetIntapp;
+	}
+
+	public void setTargetIntapp(String targetIntapp) {
+		this.targetIntapp = targetIntapp;
+	}
+
+	public String getJournalOperationId() {
+		return journalOperationId;
+	}
+
+	public void setJournalOperationId(String journalOperationId) {
+		this.journalOperationId = journalOperationId;
+	}
+
+	public String getBundle() {
+		return bundle;
+	}
+
+	public void setBundle(String bundle) {
+		this.bundle = bundle;
+	}
+
+	public TargetCostCenter getTargetCostCenter() {
+		return targetCostCenter;
+	}
+
+	public void setTargetCostCenter(TargetCostCenter targetCostCenter) {
+		this.targetCostCenter = targetCostCenter;
+	}
+
+	public SourceCostCenter getSourceCostCenter() {
+		return sourceCostCenter;
+	}
+
+	public void setSourceCostCenter(SourceCostCenter sourceCostCenter) {
+		this.sourceCostCenter = sourceCostCenter;
+	}
+
+	public String getOrderText() {
+		return orderText;
+	}
+
+	public void setOrderText(String orderText) {
+		this.orderText = orderText;
+	}
+
+	public String getMovementText() {
+		return movementText;
+	}
+
+	public void setMovementText(String movementText) {
+		this.movementText = movementText;
+	}
+
+	public OperationAmount getOperationAmount() {
+		return operationAmount;
+	}
+
+	public void setOperationAmount(OperationAmount operationAmount) {
+		this.operationAmount = operationAmount;
+	}
+
+	public String getMovementCode() {
+		return movementCode;
+	}
+
+	public void setMovementCode(String movementCode) {
+		this.movementCode = movementCode;
+	}
+	
+	
+}

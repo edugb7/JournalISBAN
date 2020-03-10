@@ -1,0 +1,19 @@
+package com.isb.interapplication;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.isb.interapplication.repository.InterapplicationRepositoryDTO;
+
+@SpringBootTest
+class ApiInterapplicationApplicationTests {
+
+	@Autowired
+    protected InterapplicationRepositoryDTO interRepo;
+	
+	@Test
+	void contextLoads() {
+	}
+
+}

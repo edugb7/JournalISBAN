@@ -1,0 +1,28 @@
+package com.isb.interapplication.entity;
+
+import java.io.Serializable;
+
+public class SourceCostCenter implements Serializable {
+
+	private String sourceCompany;
+	
+	private String sourceCenter;
+
+	public String getSourceCompany() {
+		return sourceCompany;
+	}
+
+	public void setSourceCompany(String sourceCompany) {
+		this.sourceCompany = sourceCompany;
+	}
+
+	public String getSourceCenter() {
+		return sourceCenter;
+	}
+
+	public void setSourceCenter(String sourceCenter) {
+		this.sourceCenter = sourceCenter;
+	}
+	
+	
+}

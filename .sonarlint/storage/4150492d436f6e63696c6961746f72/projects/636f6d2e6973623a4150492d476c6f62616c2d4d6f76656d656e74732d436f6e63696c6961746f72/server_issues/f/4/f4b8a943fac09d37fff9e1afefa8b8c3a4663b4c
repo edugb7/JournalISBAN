@@ -1,0 +1,7 @@
+ä
+<src/main/java/com/isb/conciliator/controller/Controller.java(com.isb:API-Global-Movements-Conciliatorsquid"RedundantThrowsDeclarationCheck(42xRemove the declaration of thrown exception 'com.isb.conciliator.exception.BadRequestError' which is a runtime exception.:MINORROPENZ df5127b75227074d913a1ae784e8372eh€·ÚŠ.r
+CODE_SMELLzAXCrTflu3uGA0WAYtFKkâ
+<src/main/java/com/isb/conciliator/controller/Controller.java(com.isb:API-Global-Movements-Conciliatorsquid"RedundantThrowsDeclarationCheck(B2vRemove the declaration of thrown exception 'com.isb.conciliator.exception.ErrorNotFound' which is a runtime exception.:MINORROPENZ c1aaf953758e2f14e9e0c8f6840f2de9h€·ÚŠ.r
+CODE_SMELLzAXCrTflu3uGA0WAYtFKlâ
+<src/main/java/com/isb/conciliator/controller/Controller.java(com.isb:API-Global-Movements-Conciliatorsquid"RedundantThrowsDeclarationCheck(Q2vRemove the declaration of thrown exception 'com.isb.conciliator.exception.ErrorNotFound' which is a runtime exception.:MINORROPENZ 66eb57ce743ee7d318b23a1e8b532c19h€·ÚŠ.r
+CODE_SMELLzAXCrTflu3uGA0WAYtFKm

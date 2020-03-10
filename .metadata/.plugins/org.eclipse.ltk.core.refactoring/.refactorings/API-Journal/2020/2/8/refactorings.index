@@ -1,0 +1,32 @@
+1581953957168	Delete element
+1582035704502	Rename type 'MappingErrors'
+1582035793756	Rename type 'ErrorBadReq'
+1582038478518	Move compilation unit
+1582042168147	Rename type 'ErrorBadReq'
+1582102525940	Delete element
+1582129286898	Delete element
+1582129292208	Delete element
+1582129299819	Delete element
+1582214576712	Rename type 'JournalSerivceImpl'
+1582215698765	Rename compilation unit 'UserLegacyDao.java'
+1582215718402	Rename type 'UserDao'
+1582216118820	Rename compilation unit 'UserResource.java'
+1582216289706	Rename compilation unit 'JournalService.java'
+1582278886192	Rename type 'JournalRepositoryDTO'
+1582287607915	Copy package
+1582287621714	Delete element
+1582287667578	Copy compilation units
+1582287679389	Copy compilation units
+1582287706549	Delete elements
+1582287827709	Copy compilation unit
+1582287839698	Rename type 'JournalService'
+1582287856024	Copy compilation unit
+1582287867832	Rename type 'JournalServiceImpl'
+1582287913657	Rename type 'JournalEntity'
+1582287925511	Rename type 'JournalEntity'
+1582288051808	Copy compilation unit
+1582288062899	Rename type 'JournalResource'
+1582288166941	Copy compilation unit
+1582288180816	Rename type 'Controller'
+1582288923902	Delete element
+1582288941508	Delete element

@@ -1,0 +1,5 @@
+package com.isb.journal.repository;
+
+public interface UserRepository {
+
+}

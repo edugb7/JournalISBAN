@@ -1,0 +1,41 @@
+package com.isb.interapplication.entity;
+
+import javax.validation.constraints.NotNull;
+
+public class OperationAmount {
+
+	@NotNull
+	private Double amount;
+	
+	@NotNull
+	private String currency;
+	
+	@NotNull
+	private String journalOperationType;
+
+	public Double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
+
+	public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+
+	public String getJournalOperationType() {
+		return journalOperationType;
+	}
+
+	public void setJournalOperationType(String journalOperationType) {
+		this.journalOperationType = journalOperationType;
+	}
+	
+	
+}

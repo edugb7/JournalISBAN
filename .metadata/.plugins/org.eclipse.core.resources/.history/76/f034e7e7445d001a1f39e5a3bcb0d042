@@ -1,0 +1,50 @@
+package com.isb.journal.entity.relacional;
+
+import java.io.Serializable;
+import java.util.UUID;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import io.swagger.annotations.ApiModelProperty;
+
+@Entity
+@Table(name = "journal")
+//@Access(value=AccessType.FIELD)
+//@Inheritance(strategy=InheritanceType.JOINED)
+public class JournalEntityOracle implements Serializable {
+
+	private static final long serialVersionUID = 3633220346348558968L;
+
+	@Id
+	@Column(name = "id", updatable = false, nullable = false, columnDefinition = "BINARY(16)")
+	@ApiModelProperty(value = "The journal´s id", required = true) 
+	private UUID journalOperationId = UUID.randomUUID();
+
+	@OneToOne(cascade = {CascadeType.ALL}, mappedBy =  "journalEntityOracle")
+	private JournalOperationRequest journalOperationRequest;
+
+	public UUID getJournalOperationId() {
+		return journalOperationId;
+	}
+
+	public void setJournalOperationId(UUID journalOperationId) {
+		this.journalOperationId = journalOperationId;
+	}
+
+	public JournalOperationRequest getJournalOperationRequest() {
+		return journalOperationRequest;
+	}
+
+	public void setJournalOperationRequest(JournalOperationRequest journalOperationRequest) {
+		this.journalOperationRequest = journalOperationRequest;
+	}
+	
+}

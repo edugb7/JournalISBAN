@@ -1,0 +1,21 @@
+package com.isb.journal.service;
+
+import java.util.List;
+
+import javax.validation.Valid;
+
+import com.isb.journal.entity.relacional.JournalEntityOracle;
+import com.isb.journal.entity.relacional.JournalOperationRequestPost;
+import com.isb.journal.entity.relacional.JournalOperationRequestPut;
+
+public interface JournalServiceOracle {
+
+	public List<JournalEntityOracle> findAllOracle();
+	
+	public JournalEntityOracle findByIdOracle(Integer id);
+
+	public JournalOperationRequestPost savePost(JournalOperationRequestPost journalEntityOracle);
+
+	public JournalOperationRequestPut savePut(JournalOperationRequestPut journalEntityOracle);
+	
+}

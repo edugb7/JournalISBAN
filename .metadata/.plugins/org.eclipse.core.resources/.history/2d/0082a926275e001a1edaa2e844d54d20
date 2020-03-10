@@ -1,0 +1,30 @@
+package com.isb.posting.entity;
+
+import javax.validation.constraints.NotNull;
+
+public class Contract {
+
+	@NotNull
+	private String contractId;
+	
+	@NotNull
+	private String contractType;
+
+	public String getContractId() {
+		return contractId;
+	}
+
+	public void setContractId(String contractId) {
+		this.contractId = contractId;
+	}
+
+	public String getContractType() {
+		return contractType;
+	}
+
+	public void setContractType(String contractType) {
+		this.contractType = contractType;
+	}
+	
+	
+}

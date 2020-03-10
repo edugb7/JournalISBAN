@@ -1,0 +1,5 @@
+package com.isb.journal.controller;
+
+public class RestExceptionHandler {
+
+}

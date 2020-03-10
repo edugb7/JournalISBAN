@@ -1,0 +1,8 @@
+autoEnabled=true
+eclipse.preferences.version=1
+extraProperties=
+fileExclusions=
+idePrefixKey=src/main/java/com/isb/interapplication
+projectKey=com.isb.posting\:API-Posting
+serverId=localhost
+sqPrefixKey=src/main/java/com/isb/posting

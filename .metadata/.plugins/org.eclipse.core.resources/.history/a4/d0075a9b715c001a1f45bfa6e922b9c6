@@ -1,0 +1,80 @@
+package com.isb.journal.entity.relacional;
+
+import java.io.Serializable;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import io.swagger.annotations.ApiModelProperty;
+
+@Entity
+@Table(name = "journal")
+@Access(value=AccessType.FIELD)
+public class JournalEntityOracle implements Serializable {
+
+	private static final long serialVersionUID = 3633220346348558968L;
+
+	@Id
+	@Column(name = "id", unique = true, nullable = false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+
+	@NotNull
+	@Column(name = "operation_id")
+	@ApiModelProperty(value = "The journal´s id", required = true)
+	private String journalOperationId;
+
+	@OneToOne(cascade = {CascadeType.ALL}, mappedBy = "journalEnt")
+	//@PrimaryKeyJoinColumn(name = "journal_operation_request")
+	@JoinColumn(name = "journal_operation_request", referencedColumnName = "id")
+	private JournalOperationRequest journalOperationRequest;
+
+	public JournalEntityOracle(@NotNull Integer id, @NotNull String journalOperationId, 
+			JournalOperationRequest journalOperationRequest
+			) {
+		super();
+		this.id = id;
+		this.journalOperationId = journalOperationId; 
+		this.journalOperationRequest = journalOperationRequest;
+	}
+
+	public JournalEntityOracle() {
+		super();
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getJournalOperationId() {
+		return journalOperationId;
+	}
+
+	public void setJournalOperationId(String journalOperationId) {
+		this.journalOperationId = journalOperationId;
+	}
+
+	public JournalOperationRequest getJournalOperationRequest() {
+		return journalOperationRequest;
+	}
+
+	public void setJournalOperationRequest(JournalOperationRequest journalOperationRequest) {
+		this.journalOperationRequest = journalOperationRequest;
+	}
+	
+}

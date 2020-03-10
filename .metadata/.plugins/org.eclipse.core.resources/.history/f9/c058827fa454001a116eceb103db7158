@@ -1,0 +1,36 @@
+package com.isb.journal.entity;
+
+public class TargetCostCenter {
+
+	private String targetCompany;
+	
+	private String targetCenter;
+
+	public TargetCostCenter(String targetCompany, String targetCenter) {
+		super();
+		this.targetCompany = targetCompany;
+		this.targetCenter = targetCenter;
+	}
+
+	public TargetCostCenter() {
+		super();
+	}
+
+	public String getTargetCompany() {
+		return targetCompany;
+	}
+
+	public void setTargetCompany(String targetCompany) {
+		this.targetCompany = targetCompany;
+	}
+
+	public String getTargetCenter() {
+		return targetCenter;
+	}
+
+	public void setTargetCenter(String targetCenter) {
+		this.targetCenter = targetCenter;
+	}
+	
+	
+}

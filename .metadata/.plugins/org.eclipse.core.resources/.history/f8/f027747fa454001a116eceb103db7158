@@ -1,0 +1,36 @@
+package com.isb.journal.entity;
+
+public class AccountingCostCenter {
+
+	private String accountingCompany;
+	
+	private String accountingCenter;
+
+	public AccountingCostCenter(String accountingCompany, String accountingCenter) {
+		super();
+		this.accountingCompany = accountingCompany;
+		this.accountingCenter = accountingCenter;
+	}
+
+	public AccountingCostCenter() {
+		super();
+	}
+
+	public String getAccountingCompany() {
+		return accountingCompany;
+	}
+
+	public void setAccountingCompany(String accountingCompany) {
+		this.accountingCompany = accountingCompany;
+	}
+
+	public String getAccountingCenter() {
+		return accountingCenter;
+	}
+
+	public void setAccountingCenter(String accountingCenter) {
+		this.accountingCenter = accountingCenter;
+	}
+	
+	
+}

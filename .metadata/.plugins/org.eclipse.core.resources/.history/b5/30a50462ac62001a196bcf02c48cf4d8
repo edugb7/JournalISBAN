@@ -1,0 +1,5 @@
+package com.isb.journal.entity.relacional;
+
+public class User {
+
+}

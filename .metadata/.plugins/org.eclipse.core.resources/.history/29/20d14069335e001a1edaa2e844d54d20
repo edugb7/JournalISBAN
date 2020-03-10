@@ -1,0 +1,47 @@
+package com.isb.journal.model;
+
+import java.util.List;
+
+public class ModelJournalDataResponse {
+
+	private String companyCode;
+	
+	private String bundle;
+	
+	private ModelLinks _links;
+	
+	private List<ModelJournalOperationData> journalOperationList;
+
+	public String getCompanyCode() {
+		return companyCode;
+	}
+
+	public void setCompanyCode(String companyCode) {
+		this.companyCode = companyCode;
+	}
+
+	public String getBundle() {
+		return bundle;
+	}
+
+	public void setBundle(String bundle) {
+		this.bundle = bundle;
+	}
+
+	public List<ModelJournalOperationData> getJournalOperationList() {
+		return journalOperationList;
+	}
+
+	public void setJournalOperationList(List<ModelJournalOperationData> journalOperationList) {
+		this.journalOperationList = journalOperationList;
+	}
+
+	public ModelLinks get_links() {
+		return _links;
+	}
+
+	public void set_links(ModelLinks _links) {
+		this._links = _links;
+	}
+	
+}

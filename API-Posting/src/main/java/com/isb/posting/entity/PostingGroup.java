@@ -1,0 +1,39 @@
+package com.isb.posting.entity;
+
+import java.io.Serializable;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
+import lombok.Data;
+
+@Data
+public class PostingGroup implements Serializable {
+
+	private static final long serialVersionUID = 1718657988413233350L;
+
+	@Valid
+	private Contract contract;
+	
+	@NotNull
+	private String operationType;
+	
+	@NotNull
+	private String operationId;
+	
+	@Valid
+	private OperationAmount operationAmount;
+	
+	@NotNull
+	private String journalOperationId;
+	
+	@NotNull
+	private String journalOperationType;
+	
+	@NotNull
+	private String movementCode;
+	
+	@Valid
+	private MovementActions movementActions;
+
+}

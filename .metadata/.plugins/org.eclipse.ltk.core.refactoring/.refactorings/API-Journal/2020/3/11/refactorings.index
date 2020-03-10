@@ -1,0 +1,22 @@
+1583758293196	Rename type 'OAuth2AuthorizationServerConfig'
+1583763942727	Rename compilation unit 'OAuthConfiguration.java'
+1583764108844	Rename compilation unit 'ResourceServerConfiguration.java'
+1583764158424	Rename compilation unit 'ServerSecurityConfig.java'
+1583765011918	Delete element
+1583765016612	Delete element
+1583768610204	Encapsulate field 'username'
+1583768617649	Encapsulate field 'password'
+1583768861751	Rename type 'JwtUsernameAndPasswordAuthenticationFilter'
+1583768889165	Rename type 'AuthorizationServerConfig'
+1583768925840	Rename type 'JwtConfig'
+1583768947276	Rename type 'JwtTokenUtil'
+1583769052522	Rename type 'ResourceServerConfig'
+1583771740190	Delete element
+1583771749589	Delete element
+1583771860989	Delete element
+1583830189147	Delete element
+1583830192467	Delete element
+1583830195790	Delete element
+1583830199136	Delete element
+1583830202468	Delete element
+1583834578355	Infer generic type arguments

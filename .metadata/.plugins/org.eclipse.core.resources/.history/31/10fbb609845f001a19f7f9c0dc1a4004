@@ -1,0 +1,42 @@
+package com.isb.interapplication.entity;
+
+import java.io.Serializable;
+
+import javax.validation.constraints.NotNull;
+
+import lombok.Data;
+
+@Data
+public class InterapplicationOrderRequest implements Serializable {
+
+	private static final long serialVersionUID = 4304143952566318488L;
+
+	@NotNull
+	private String sourceIntapp;
+	
+	@NotNull
+	private String targetIntapp;
+	
+	@NotNull
+	private String journalOperationId;
+	
+	@NotNull
+	private String bundle;
+	
+	private TargetCostCenter targetCostCenter;
+	
+	private SourceCostCenter sourceCostCenter;
+	
+	@NotNull
+	private String orderText;
+	
+	@NotNull
+	private String movementText;
+	
+	@NotNull
+	private OperationAmount operationAmount;
+	
+	@NotNull
+	private String movementCode;
+
+}

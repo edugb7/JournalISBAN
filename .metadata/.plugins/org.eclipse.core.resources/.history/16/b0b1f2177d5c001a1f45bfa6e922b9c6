@@ -1,0 +1,58 @@
+package com.isb.journal.entity.relacional;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.PrimaryKeyJoinColumns;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="target_cost_center")
+@Access(AccessType.FIELD)
+@PrimaryKeyJoinColumns({@PrimaryKeyJoinColumn(name= "id_request", referencedColumnName = "id_target")})
+public class TargetCostCenter {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_target", unique = true, nullable = false)
+	private Integer id;
+	
+	@Column(name="target_company")
+	private String targetCompany;
+	
+	@Column(name="target_center")
+	private String targetCenter;
+
+	public TargetCostCenter(String targetCompany, String targetCenter) {
+		super();
+		this.targetCompany = targetCompany;
+		this.targetCenter = targetCenter;
+	}
+
+	public TargetCostCenter() {
+		super();
+	}
+	
+	public String getTargetCompany() {
+		return targetCompany;
+	}
+
+	public void setTargetCompany(String targetCompany) {
+		this.targetCompany = targetCompany;
+	}
+
+	public String getTargetCenter() {
+		return targetCenter;
+	}
+
+	public void setTargetCenter(String targetCenter) {
+		this.targetCenter = targetCenter;
+	}
+	
+	
+}

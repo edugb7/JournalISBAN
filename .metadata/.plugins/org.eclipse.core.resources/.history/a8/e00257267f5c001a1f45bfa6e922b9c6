@@ -1,0 +1,107 @@
+package com.isb.journal.entity.relacional;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.PrimaryKeyJoinColumns;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name="journal_operation_data")
+@Access(AccessType.FIELD)
+public class JournalOperationData extends JournalOperationRequest {
+
+	private static final long serialVersionUID = -7115661694740200808L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_data", unique = true, nullable = false)
+	private Integer id;
+	
+	@NotNull
+	@Column(name="company_code")
+	private String companyCode;
+	
+	@NotNull
+	@Column(name="instance_code")
+	private String instanceCode;
+	
+	@NotNull 
+	@Column(name="journal_operation_type")
+	private String journalOperationType;
+	
+	@Column(name="external_reference")
+	private String externalReference;
+	
+	@NotNull
+	@Column(name="main_contract")
+	private String mainContract;
+	
+	@OneToOne(mappedBy = "journalOperationData")
+	private JournalOperationRequest JournalOperationRequest;
+	
+	public JournalOperationData(@NotNull String companyCode, @NotNull String journalOperationType,
+			String externalReference, @NotNull String mainContract, @NotNull String instanceCode) {
+		super();
+		this.companyCode = companyCode;
+		this.journalOperationType = journalOperationType;
+		this.externalReference = externalReference;
+		this.mainContract = mainContract;
+		this.instanceCode = instanceCode;
+	}
+
+	public JournalOperationData() {
+		super();
+	}
+	
+	public String getCompanyCode() {
+		return companyCode;
+	}
+	
+	public String getInstanceCode() {
+		return instanceCode;
+	}
+
+	public void setInstanceCode(String instanceCode) {
+		this.instanceCode = instanceCode;
+	}
+
+	public void setCompanyCode(String companyCode) {
+		this.companyCode = companyCode;
+	}
+
+	public String getJournalOperationType() {
+		return journalOperationType;
+	}
+
+	public void setJournalOperationType(String journalOperationType) {
+		this.journalOperationType = journalOperationType;
+	}
+
+	public String getExternalReference() {
+		return externalReference;
+	}
+
+	public void setExternalReference(String externalReference) {
+		this.externalReference = externalReference;
+	}
+
+	public String getMainContract() {
+		return mainContract;
+	}
+
+	public void setMainContract(String mainContract) {
+		this.mainContract = mainContract;
+	}
+	
+	
+}

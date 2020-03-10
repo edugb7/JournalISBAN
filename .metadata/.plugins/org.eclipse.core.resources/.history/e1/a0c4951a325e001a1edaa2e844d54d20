@@ -1,0 +1,30 @@
+package com.isb.journal.entity.norelacional;
+
+import java.io.Serializable;
+
+public class AccountingCostCenter implements Serializable {
+
+	private static final long serialVersionUID = -5324636318518007938L;
+
+	private String accountingCompany;
+	
+	private String accountingCenter;
+
+	public String getAccountingCompany() {
+		return accountingCompany;
+	}
+
+	public void setAccountingCompany(String accountingCompany) {
+		this.accountingCompany = accountingCompany;
+	}
+
+	public String getAccountingCenter() {
+		return accountingCenter;
+	}
+
+	public void setAccountingCenter(String accountingCenter) {
+		this.accountingCenter = accountingCenter;
+	}
+	
+	
+}

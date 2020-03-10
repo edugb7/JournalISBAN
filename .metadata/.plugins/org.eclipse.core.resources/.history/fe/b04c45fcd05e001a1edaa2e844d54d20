@@ -1,0 +1,42 @@
+package com.isb.journal.entity.norelacional;
+
+import java.io.Serializable;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+import lombok.Data;
+
+@Data
+@Document
+public class JournalOperationData implements Serializable {
+
+	private static final long serialVersionUID = -1062435751430683193L;
+
+	@NotNull
+	private String companyCode;
+	
+	@NotNull
+	@NotEmpty
+	@JsonInclude(value = Include.ALWAYS, content = Include.NON_NULL)
+	@Indexed(unique = true)
+	private String instanceCode;
+	
+	@NotNull 
+	@NotEmpty
+	@NotBlank
+	private String journalOperationType;
+	
+	private String externalReference;
+	
+	@NotNull
+	private String mainContract;
+
+}

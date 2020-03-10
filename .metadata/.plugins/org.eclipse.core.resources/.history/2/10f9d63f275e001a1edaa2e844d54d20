@@ -1,0 +1,69 @@
+package com.isb.posting.entity;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.UUID;
+
+import javax.validation.constraints.NotNull;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(value = "posting")
+public class PostingEntity implements Serializable{
+
+	private static final long serialVersionUID = -4958351786085019482L;
+
+	@Id
+	private UUID id = UUID.randomUUID();
+	
+	private String externalReference;
+
+	private String bundle;
+
+	@NotNull
+	private Boolean actionCommit;
+
+	private List<PostingGroup> postingGroup;
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
+	}
+
+	public String getExternalReference() {
+		return externalReference;
+	}
+
+	public void setExternalReference(String externalReference) {
+		this.externalReference = externalReference;
+	}
+
+	public String getBundle() {
+		return bundle;
+	}
+
+	public void setBundle(String bundle) {
+		this.bundle = bundle;
+	}
+
+	public boolean isActionCommit() {
+		return actionCommit;
+	}
+
+	public void setActionCommit(boolean actionCommit) {
+		this.actionCommit = actionCommit;
+	}
+
+	public List<PostingGroup> getPostingGroup() {
+		return postingGroup;
+	}
+
+	public void setPostingGroup(List<PostingGroup> postingGroup) {
+		this.postingGroup = postingGroup;
+	}
+	
+}

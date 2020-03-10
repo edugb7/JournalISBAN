@@ -1,0 +1,23 @@
+package com.isb.journal.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.isb.journal.entity.relacional.JournalEntityOracle;
+import com.isb.journal.entity.relacional.JournalOperationRequestPost;
+import com.isb.journal.entity.relacional.JournalOperationRequest;
+
+public interface RepositoryOracleDTO extends JpaRepository<JournalEntityOracle, Integer>{
+
+	@Query(value="SELECT * FROM journal.journal WHERE id_journal = ?1", nativeQuery = true)
+	public JournalEntityOracle findJournalById(Integer id);
+	
+	@Query(value="SELECT * FROM journal.journal", nativeQuery = true)
+	public List<JournalEntityOracle> findAllJournal(Integer id);
+
+	public JournalEntityOracle saveOracle(JournalEntityOracle journalEntityOracle);
+	
+}
+

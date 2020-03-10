@@ -1,0 +1,13 @@
+1583161230726	Rename type 'JournalOperationRequest'
+1583161252273	Copy compilation unit
+1583165064573	Encapsulate field 'JournalOperationRequestPost'
+1583167761649	Copy compilation unit
+1583167890997	Rename type 'JournalOperationRequestPut'
+1583167897326	Delete element
+1583230050569	Copy compilation unit
+1583231615010	Delete element
+1583236164233	Delete element
+1583236168631	Delete element
+1583237009597	Encapsulate field 'postingType'
+1583250773502	Encapsulate field 'mainContract'
+1583252332679	Delete element

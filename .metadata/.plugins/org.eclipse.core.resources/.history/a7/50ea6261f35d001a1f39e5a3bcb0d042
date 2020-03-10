@@ -1,0 +1,40 @@
+package com.isb.interapplication.entity;
+
+import java.io.Serializable;
+import java.util.UUID;
+
+import javax.validation.constraints.NotNull;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import io.swagger.annotations.ApiModelProperty;
+
+@Document(value = "interapplication")
+public class InterapplicationEntity implements Serializable {
+
+	private static final long serialVersionUID = 3633220346348558968L;
+
+	@Id
+	@ApiModelProperty(value = "The journal operation's id", required = true)
+	private UUID interapplicationId = UUID.randomUUID();
+
+	private InterapplicationOrderRequest interapplicationOrderRequest;
+
+	public UUID getInterapplicationId() {
+		return interapplicationId;
+	}
+
+	public void setInterapplicationId(UUID interapplicationId) {
+		this.interapplicationId = interapplicationId;
+	}
+
+	public InterapplicationOrderRequest getInterapplicationOrderRequest() {
+		return interapplicationOrderRequest;
+	}
+
+	public void setInterapplicationOrderRequest(InterapplicationOrderRequest interapplicationOrderRequest) {
+		this.interapplicationOrderRequest = interapplicationOrderRequest;
+	}
+	
+}

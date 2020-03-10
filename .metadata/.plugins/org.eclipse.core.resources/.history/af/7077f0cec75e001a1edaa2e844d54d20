@@ -1,0 +1,27 @@
+package com.isb.journal.entity.norelacional;
+
+import java.io.Serializable;
+import java.util.List;
+
+import lombok.Data;
+
+@Data
+public class JournalOperationRequest implements Serializable {
+
+	private static final long serialVersionUID = 1521088339820582884L;
+
+	private List<JournalOperationData> journalOperationList;
+
+	private OperationAmount operationAmount;
+	
+	private AccountingCostCenter accountingCostCenter;
+	
+	private TargetCostCenter targetCostCenter;
+	
+	private UserCostCenter userCostCenter;
+	
+	//private ObbSpecificData obbSpecificData;
+	
+	private String postingType;
+
+}

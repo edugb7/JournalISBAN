@@ -1,0 +1,28 @@
+package com.isb.journal.entity.norelacional;
+
+import java.io.Serializable;
+
+public class UserCostCenter implements Serializable {
+
+	private String userCompany;
+	
+	private String userCenter;
+
+	public String getUserCompany() {
+		return userCompany;
+	}
+
+	public void setUserCompany(String userCompany) {
+		this.userCompany = userCompany;
+	}
+
+	public String getUserCenter() {
+		return userCenter;
+	}
+
+	public void setUserCenter(String userCenter) {
+		this.userCenter = userCenter;
+	}
+	
+	
+}

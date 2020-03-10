@@ -1,0 +1,19 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: testdb
+      uri: mongodb://localhost/test
+  datasource:
+    url: jdbc:mysql://localhost:3306/Journal?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC  
+    username: root
+    password: __16623__VIEW__
+  jpa:  
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.MySQL8Dialect 
+    #driver-class-name: com.mysql.jdbc.Driver
+server:
+  port: 8081
+

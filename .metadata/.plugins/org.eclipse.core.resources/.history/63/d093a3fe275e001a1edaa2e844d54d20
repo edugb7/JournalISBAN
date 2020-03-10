@@ -1,0 +1,25 @@
+package com.isb.posting.entity;
+
+import javax.validation.constraints.NotNull;
+
+import lombok.Data;
+
+@Data
+public class MovementActions {
+
+	@NotNull
+	private Boolean skipAuthorizationWarning;
+	
+	@NotNull
+	private Boolean skipUnavailableBalanceAction;
+
+	@NotNull
+	private Boolean skipBlock30Days;
+	
+	@NotNull
+	private Boolean forceExecution;
+	
+	@NotNull
+	private String withholdingId;
+
+}

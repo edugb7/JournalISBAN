@@ -1,0 +1,30 @@
+package com.isb.journal.entity.norelacional;
+
+import java.io.Serializable;
+
+public class TargetCostCenter implements Serializable {
+
+	private static final long serialVersionUID = -2895875322535147303L;
+
+	private String targetCompany;
+	
+	private String targetCenter;
+
+	public String getTargetCompany() {
+		return targetCompany;
+	}
+
+	public void setTargetCompany(String targetCompany) {
+		this.targetCompany = targetCompany;
+	}
+
+	public String getTargetCenter() {
+		return targetCenter;
+	}
+
+	public void setTargetCenter(String targetCenter) {
+		this.targetCenter = targetCenter;
+	}
+	
+	
+}

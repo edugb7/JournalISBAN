@@ -1,0 +1,18 @@
+package com.isb.journal.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.isb.journal.entity.relacional.JournalEntityOracle;
+import com.isb.journal.entity.relacional.JournalOperationData;
+import com.isb.journal.entity.relacional.JournalOperationRequestPost;
+import com.isb.journal.entity.relacional.JournalOperationRequestPut;
+
+public interface RepositoryDataListDTO extends JpaRepository<JournalOperationData, Integer>{
+
+	public JournalOperationData save(JournalOperationData journalOperationData);
+	
+}
+

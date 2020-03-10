@@ -1,0 +1,28 @@
+package com.isb.journal.model;
+
+import lombok.Data;
+
+@Data
+public class ModelAccountingCostCenter {
+	
+	private String company;
+	
+	private String center;
+
+	public String getCompany() {
+		return company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+	public String getCenter() {
+		return center;
+	}
+
+	public void setCenter(String center) {
+		this.center = center;
+	}
+
+}

@@ -1,0 +1,136 @@
+package com.isb.journal.model;
+
+public class ModelJournalOperationData {
+	
+	private String journalOperationId;
+	
+	private String journalOperationType; 
+	
+	private String externalReference; 
+	
+	private String mainContract;   
+	
+	private String companyCode;    
+	
+	private String instanceCode;
+	
+	private String journalOperationStatus;
+	
+	private String postingType;
+
+	private ModelOperationAmount modelOperationAmount;
+	
+	private ModelAccountingCostCenter journalAccountingCostcenter;
+	
+	private ModelTargetCostCenter modelTargetCostCenter;
+	
+	private ModelUserCostCenter journaluserCostCenter;
+	
+	private ModelObbSpecificData modelObbSpecificData;
+
+	public String getJournalOperationId() {
+		return journalOperationId;
+	}
+	
+	public void setJournalOperationId(String journalOperationId) {
+		this.journalOperationId = journalOperationId;
+	}
+	
+	public String getJournalOperationType() {
+		return journalOperationType;
+	}
+	
+	public void setJournalOperationType(String journalOperationType) {
+		this.journalOperationType = journalOperationType;
+	}
+	
+	public String getExternalReference() {
+		return externalReference;
+	}
+	
+	public void setExternalReference(String externalReference) {
+		this.externalReference = externalReference;
+	}
+	
+	public String getMainContract() {
+		return mainContract;
+	}
+	
+	public void setMainContract(String mainContract) {
+		this.mainContract = mainContract;
+	}
+	
+	public String getCompanyCode() {
+		return companyCode;
+	}
+	
+	public void setCompanyCode(String companyCode) {
+		this.companyCode = companyCode;
+	}
+	
+	public String getJournalOperationStatus() {
+		return journalOperationStatus;
+	}
+	
+	public void setJournalOperationStatus(String journalOperationStatus) {
+		this.journalOperationStatus = journalOperationStatus;
+	}
+
+	public String getPostingType() {
+		return postingType;
+	}
+
+	public void setPostingType(String postingType) {
+		this.postingType = postingType;
+	}
+
+	public ModelOperationAmount getJournalOperationAmount() {
+		return modelOperationAmount;
+	}
+
+	public void setJournalOperationAmount(ModelOperationAmount modelOperationAmount) {
+		this.modelOperationAmount = modelOperationAmount;
+	}
+
+	public ModelAccountingCostCenter getJournalAccountingCostcenter() {
+		return journalAccountingCostcenter;
+	}
+
+	public void setJournalAccountingCostcenter(ModelAccountingCostCenter journalAccountingCostcenter) {
+		this.journalAccountingCostcenter = journalAccountingCostcenter;
+	}
+
+	public ModelTargetCostCenter getJournalTargetCostCenter() {
+		return modelTargetCostCenter;
+	}
+
+	public void setJournalTargetCostCenter(ModelTargetCostCenter modelTargetCostCenter) {
+		this.modelTargetCostCenter = modelTargetCostCenter;
+	}
+
+	public ModelUserCostCenter getJournaluserCostCenter() {
+		return journaluserCostCenter;
+	}
+
+	public void setJournaluserCostCenter(ModelUserCostCenter journaluserCostCenter) {
+		this.journaluserCostCenter = journaluserCostCenter;
+	}
+
+	public ModelObbSpecificData getJournalObbSpecificData() {
+		return modelObbSpecificData;
+	}
+
+	public void setJournalObbSpecificData(ModelObbSpecificData modelObbSpecificData) {
+		this.modelObbSpecificData = modelObbSpecificData;
+	}
+
+	public String getInstanceCode() {
+		return instanceCode;
+	}
+
+	public void setInstanceCode(String instanceCode) {
+		this.instanceCode = instanceCode;
+	}
+	
+	
+}

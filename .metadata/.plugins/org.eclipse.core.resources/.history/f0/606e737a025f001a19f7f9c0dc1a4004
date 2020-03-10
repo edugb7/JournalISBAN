@@ -1,0 +1,12 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: testdb
+      uri: mongodb://localhost/test
+  devtools:
+    restart:
+      log-condition-evaluation-delta: false    
+server:
+  port: 8082

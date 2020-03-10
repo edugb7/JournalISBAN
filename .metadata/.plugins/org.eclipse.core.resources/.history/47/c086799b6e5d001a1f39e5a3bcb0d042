@@ -1,0 +1,49 @@
+package com.isb.journal.entity.norelacional;
+
+import java.io.Serializable;
+import java.util.UUID;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import io.swagger.annotations.ApiModelProperty;
+
+@Document(value = "journal")
+public class JournalEntityMongo implements Serializable {
+
+	private static final long serialVersionUID = 3633220346348558968L;
+
+	@Id
+	@ApiModelProperty(value = "The journal operation's id", required = true)
+	private UUID journalOperationId = UUID.randomUUID();
+
+	@ApiModelProperty(value = "The journal operation's request", required = true)
+	private JournalOperationRequest journalOperationRequest;
+
+	public JournalEntityMongo(UUID journalOperationId, JournalOperationRequest journalOperationRequest) {
+		super();
+		this.journalOperationId = journalOperationId;
+		this.journalOperationRequest = journalOperationRequest;
+	}
+
+	public JournalEntityMongo() {
+		super();
+	}
+
+	public UUID getJournalOperationId() {
+		return journalOperationId;
+	}
+
+	public void setId(UUID journalOperationId) {
+		this.journalOperationId = journalOperationId;
+	}
+
+	public JournalOperationRequest getJournalOperationRequest() {
+		return journalOperationRequest;
+	}
+
+	public void setJournalOperationRequest(JournalOperationRequest journalOperationRequest) {
+		this.journalOperationRequest = journalOperationRequest;
+	}
+	
+}

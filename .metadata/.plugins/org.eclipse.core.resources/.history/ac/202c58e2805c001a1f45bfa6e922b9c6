@@ -1,0 +1,61 @@
+package com.isb.journal.entity.relacional;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.PrimaryKeyJoinColumns;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name="operation_amount")
+@Access(AccessType.FIELD)
+public class OperationAmount extends JournalOperationRequest {
+
+	private static final long serialVersionUID = 2526797792517831864L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_amount", unique = true, nullable = false)
+	private Integer id;
+
+	@NotNull
+	@Column(name="amount")
+	private Double amount;
+	
+	@NotNull
+	@Column(name="currency")
+	private String currency;
+
+	public OperationAmount(@NotNull Double amount, @NotNull String currency) {
+		super();
+		this.amount = amount;
+		this.currency = currency;
+	}
+
+	public OperationAmount() {
+		super();
+	}
+
+	public Double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
+
+	public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+	
+}
