@@ -16,13 +16,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.isb.journal.entity.norelacional.JournalEntityMongo;
 import com.isb.journal.entity.relacional.ObbDefinition;
+import com.isb.journal.exception.BadRequestError;
 import com.isb.journal.model.JournalOperationData;
 import com.isb.journal.model.JournalOperationRequestObj;
 import com.isb.journal.model.OperationType;
 import com.isb.journal.repository.ObbDefinitionRepository;
 import com.isb.journal.repository.RepositoryMongoDTO;
+import com.isb.journal.util.ObbDefinitionConverter;
 
 import io.swagger.annotations.Api;
 
@@ -43,13 +46,13 @@ public class MainController {
 	@ResponseStatus(HttpStatus.CREATED)
 //  @ApiOperation(value = "Creating a new journal entity", notes = "Return a new journal entity")
 //	@ApiResponse(response = JournalEntityOracle.class, code = 200, message = "Succesfully creating a new journal entity")
-	public List<ObbDefinition> createEntityOracle(
+	public JournalEntityMongo createEntityOracle(
 			@RequestHeader(value = "X-IBM-Client-Id", required = true) String clientId,
 			@RequestHeader(value = "X-Santander-Global-Id", required = false) String santanderGlobalId,
 			@RequestHeader(value = "Authorization", required = true) String authorization,
 			@Valid @RequestBody JournalOperationRequestObj request) {
 		
-		List<ObbDefinition> obbDefinitions = new ArrayList<>();
+		List<com.isb.journal.entity.norelacional.ObbDefinition> obbDefinitions = new ArrayList<>();
 		
 		for (JournalOperationData data : request.getJournalOperationRequest().getJournalOperationList()) {
 			
@@ -59,11 +62,12 @@ public class MainController {
 					opType.getSubProduct(), opType.getBasic(), opType.getBank());
 			
 			if (obbDefinition != null)
-				obbDefinitions.add(obbDefinition);
+				obbDefinitions.add(ObbDefinitionConverter.converter(obbDefinition));
+			else
+				throw new BadRequestError();
 		}
 	
-		mongo.save(new JournalEntityMongo());
-		return obbDefinitions;
+		return mongo.save(new JournalEntityMongo(request, obbDefinitions));
 	}
 	
 }

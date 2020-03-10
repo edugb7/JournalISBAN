@@ -40,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .and()
                 .authorizeRequests()
                 .antMatchers("/auth/signin").permitAll()
-                .antMatchers(HttpMethod.POST, "/journal_operations/oracle/**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/journal_operations/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/journal_operations/**").permitAll()
                 .anyRequest().authenticated()
             .and()

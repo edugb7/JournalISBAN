@@ -8,7 +8,10 @@ import javax.persistence.Embeddable;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.Data;
+
 @Embeddable
+@Data
 public class ObbDefinitionIdentity implements Serializable {
 
 	private static final long serialVersionUID = -2528168346952768213L;
